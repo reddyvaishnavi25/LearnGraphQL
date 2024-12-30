@@ -1,0 +1,29 @@
+
+for the future reference:
+
+https://medium.com/@rajeshdavid/how-does-a-graphql-service-work-internally-496dc9264096
+
+here schema is defined using SDL (Schema Defination Langauge)
+The Schema Definition Language (SDL) is a syntax for defining GraphQL schemas that is human-readable and compact. 
+It is a schema-first approach that defines types, queries, mutations, and subscriptions without specifying how the data is fetched or 
+what business logic should be applied.
+
+But but, JS envirnmonet cannot understand SDL, so they have to be converted into GraphQL Schema Objects.
+
+The GraphQLSchema object is an internal representation of the schema that the GraphQL engine uses to execute queries. 
+It includes all the information defined in the SDL schema, but in addition to that, it also attaches resolvers—the functions that 
+actually fetch the data or perform actions when fields are queried.
+The GraphQLSchema object ties these resolvers to the schema, so when a query is executed, the GraphQL engine knows which resolver to call for each field.
+
+buildSchema -> (converts sdl to graphQL)
+printSchema -> (converts graphql to sdl)
+
+Running a GraphQL service:
+1) GraphQL query Parsing
+2) GraphQL query and schema validation
+3) GraphQL query Execution
+
+Abstract Syntax Trees(AST) are the core if graphQL
+refer the above link for more detailed info.
+
+
